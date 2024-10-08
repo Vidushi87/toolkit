@@ -1,0 +1,158 @@
+.button {
+  border: none;
+  outline: none;
+  appearance: none;
+  background: transparent;
+  color: inherit;
+}
+body {
+  background-color: #0f0f0f important!;
+  color: #ffffff;
+  background-image: linear-gradient(#161616 1px, transparent 1px),
+    linear-gradient(to right, #161616 1px, #0f0f0f 1px);
+  background-size: 20px 20px;
+}
+
+.calculator {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  color: #00ff62;
+}
+.calculator h1 {
+  text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
+}
+
+.container {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: grid;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.displayWindow {
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1rem;
+  height: 140px;
+  flex-direction: column;
+  border-top: 2px solid grey;
+}
+
+.expression {
+  overflow-x: auto;
+  width: 100%;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  scrollbar-width: none;
+  max-height: 2rem;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.result {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.keysWindow {
+  background-color: rgb(29, 29, 29);
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.keysWindow button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.keysWindow button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.keysScientific {
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.line {
+  margin-block: 1.5rem;
+  width: 3px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.keysBasic {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.equal {
+  background-color: #00ff62;
+  color: #0f0f0f !important;
+}
+
+.number {
+  color: white !important;
+  font-weight: 600;
+}
+
+@media (max-width: 610px) {
+  body {
+    padding: 1rem;
+  }
+
+  .keysWindow {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .keysScientific {
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.history {
+  background-color: #161616;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-y: auto;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  width: 20%;
+  height: 30rem;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.history li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.history li:last-child {
+  border-bottom: none;
+}
