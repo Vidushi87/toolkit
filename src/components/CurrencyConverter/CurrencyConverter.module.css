@@ -6,7 +6,7 @@ body {
     background-size: 20px 20px;
   }
   
-  .BMICalculator {
+  .currencyConverter {
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     max-width: 600px;
@@ -15,7 +15,7 @@ body {
     color: #00ff62;
   }
 
-  .BMICalculator h1 {
+  .currencyConverter h1 {
     text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
   }
   
