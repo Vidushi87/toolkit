@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Header.module.css";
+import NavBar from "./NavBar";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,15 +10,15 @@ const Header = () => {
         <div
           className={`d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ${styles.container}`}
         >
-          <a
-            href="/"
+          <Link
+            to="/"
             className={`align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none text-center ${styles.icon}`}
           >
             <i className="bi bi-tools h1 align-items-center justify-content-center d-block" />
             Tool Kit
-          </a>
-
-          <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          </Link>
+          <NavBar />
+          {/* <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
               <a href="#km" className="nav-link text-secondary text-center">
                 <i className="bi bi-calculator h2 d-block" />
@@ -62,7 +64,7 @@ const Header = () => {
                 Calendar
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </header>
