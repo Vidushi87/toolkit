@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "./App.css"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Calendar from "./components/Calendar/Calendar";
 import Header from "./components/Header/Header";

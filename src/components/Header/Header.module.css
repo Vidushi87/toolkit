@@ -1,5 +1,7 @@
 .container {
   margin-left: 3rem;
+  font-weight: 500;
+  font-size: large;
 }
 
 .icon {
