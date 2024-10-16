@@ -1,3 +1,4 @@
+
 .container {
   margin-left: 3rem;
   font-weight: 500;
@@ -6,4 +7,22 @@
 
 .icon {
   font-size: large;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+}
+
+.menu span {
+  height: 0.4rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.2rem;
 }

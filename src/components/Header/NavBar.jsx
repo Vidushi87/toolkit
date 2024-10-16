@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
 
 const NavBar = () => {
   return (
@@ -63,6 +64,12 @@ const NavBar = () => {
           </Link>
         </li>
       </ul>
+     {/*  <div className={styles.menu}> //https://www.youtube.com/watch?v=17l6AOc8s10
+        menu
+        <span></span>
+        <span></span>
+        <span></span>
+      </div> */}
     </nav>
   );
 };

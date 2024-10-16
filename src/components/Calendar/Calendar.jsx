@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import styles from "./Calendar.module.css";
 
 const Calendar = () => {
   return (
-    <div>Calendar</div>
-  )
-}
+    <div className={styles.container}>
+      <div className={styles.calendar}>
+        <center>
+          <h1>Calendar</h1>
+        </center>
+      </div>
+    </div>
+  );
+};
 
-export default Calendar
+export default Calendar;
