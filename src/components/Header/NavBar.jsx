@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-
+//https://www.youtube.com/watch?v=0_Lwi5ucGwM
 const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <nav>
-      <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+      <div
+        className={`col-12 col-lg-auto my-2 my-md-0 ${styles.menu}`}
+        onClick={toggleMenu}
+      >
+        <i className="bi bi-list h1 d-block" />
+      </div>
+      <ul
+        className={`nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small ${
+          isMenuOpen ? styles.showMenu : styles.hideMenu
+        }`}
+      >
         <li>
           <Link
             to="/calculator"
@@ -64,12 +79,6 @@ const NavBar = () => {
           </Link>
         </li>
       </ul>
-     {/*  <div className={styles.menu}> //https://www.youtube.com/watch?v=17l6AOc8s10
-        menu
-        <span></span>
-        <span></span>
-        <span></span>
-      </div> */}
     </nav>
   );
 };

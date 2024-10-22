@@ -156,3 +156,67 @@ body {
 .history li:last-child {
   border-bottom: none;
 }
+
+.historyContainer {
+  max-height: 300px; /* Set the max height for the history */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.historyContainer::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.historyContainer::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Scrollbar track background */
+}
+
+.historyContainer::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar handle */
+  border-radius: 10px;
+}
+
+.historyContainer::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Handle on hover */
+}
+
+.historyList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.historyItem {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.historyItem:last-child {
+  border-bottom: none;
+}
+
+.clearButton {
+  padding: 5px 10px;
+  background-color: #949191;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.clearButton:hover {
+  background-color: #d3d3d3;
+  color:#555
+}
+
+.historyHeader {
+  display: flex;
+  justify-content: space-between; /* Distributes space between items */
+  align-items: center; /* Vertically centers items */
+  margin-bottom: 1rem; /* Adds some space below the header */
+}
+
+.historyHeader h2 {
+  margin: 0; /* Removes default margin for h2 */
+}
