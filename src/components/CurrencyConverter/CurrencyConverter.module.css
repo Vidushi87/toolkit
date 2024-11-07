@@ -13,6 +13,7 @@ body {
   width: 100%;
   overflow: hidden;
   color: #00ff62;
+  display: block;
 }
 
 .currencyConverter h1 {
@@ -30,31 +31,118 @@ body {
 }
 
 .converterForm {
+  width: auto;
+  display: block;
   margin-top: 20px;
   border-top: 2px solid #808080db;
-  padding: 10px;
+  padding: 45px;
 }
 
 .inputGroup {
+  outline: none;
   margin-top: 10px;
   display: flex;
   margin-bottom: 9px;
   width: 100%;
-  background-color: rgb(29, 29, 29) !important; 
+  background-color: rgb(29, 29, 29) !important;
 }
 
 .spanElement {
   background-color: rgb(29, 29, 29) !important;
   color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.180) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
   font-size: 1.1rem;
 }
 
-.inputAmount{
+.inputAmount {
   outline: none;
   min-height: 50px;
-  border-radius: 5px ;
-  border-color:  rgba(255, 255, 255, 0.180);
+  border-radius: 5px;
+  border-color: rgba(255, 255, 255, 0.18);
   background-color: rgb(29, 29, 29) !important;
-  color: white
+  color: white;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px 20px 50px;
+}
+
+.formGroup label {
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+.currencySelect {
+  display: flex;
+  border-radius: 5px;
+  min-height: 45px;
+  border-color: rgba(255, 255, 255, 0.18);
+  background-color: rgb(29, 29, 29) !important;
+  align-items: center;
+  padding: 0 10px;
+  color: #ffffff;
+}
+
+.currencySelect img {
+  width: 40px;
+}
+
+.currencyDropdown {
+  outline: none;
+  background: none;
+  color: #8e8888;
+  font-weight: 500;
+  border: none;
+  padding: 0 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.currencyDropdown option {
+  color: black;
+  font-weight: 500;
+}
+
+.swapIcon {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  border-color: rgba(255, 255, 255, 0.18);
+  background-color: rgb(29, 29, 29) !important;
+  display: flex;
+  margin-top: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+.swapIcon:hover {
+  background-color: rgb(29, 29, 29, 0.5) !important;
+}
+
+.submitButton {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.exchangeRateResult {
+ font-size: 1.1rem; 
+ font-weight: 500;
+ padding: 25px 0;
+ margin-top: 30px;
+ background-color: rgba(255, 255, 255, 0.18);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 5px;
+ letter-spacing: 0.5px;
 }

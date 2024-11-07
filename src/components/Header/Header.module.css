@@ -5,8 +5,20 @@
   justify-content: space-between; 
 }
 
+.nav{
+
+  --bs-nav-link-color: white;
+}
 .icon {
   font-size: large;
+}
+
+.active {
+  color: white; /* Change to your desired active text color */
+}
+
+.activeIcon {
+  color: white; /* Change to your desired active icon color */
 }
 
 .menu {

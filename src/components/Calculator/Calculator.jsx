@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import KeysWindow from "./KeysWindow";
 import DisplayWindow from "./DisplayWindow";
 import styles from "./Calculator.module.css";
+import History from "./History";
 
 const Calculator = () => {
   const [expression, setExpression] = useState("");
@@ -45,7 +46,6 @@ const Calculator = () => {
   };
 
   const handleButton = (value) => {
-    console.log(value);
     if (value === "AC") {
       setExpression("");
       setDisplayExp("");
@@ -101,27 +101,7 @@ const Calculator = () => {
       </div>
 
       {/* History Section */}
-      <div className={styles.history}>
-        <div className={styles.historyHeader}>
-          <h2>History</h2>
-          <button onClick={clearHistory} className={styles.clearButton}>
-            Clear
-          </button>
-        </div>
-        <div className={styles.historyContainer}>
-          {history.length > 0 ? (
-            <ul className={styles.historyList}>
-              {history.map((item, index) => (
-                <li key={index} className={styles.historyItem}>
-                  {item.expression} = {item.result}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No history yet</p>
-          )}
-        </div>
-      </div>
+      <History clearHistory={clearHistory} history={history} />
     </div>
   );
 };

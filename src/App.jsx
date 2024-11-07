@@ -12,6 +12,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Calculator from "./components/Calculator/Calculator";
 import ToDoList from "./components/ToDoList/ToDoList";
 import WorldClock from "./components/WorldClock/WorldClock";
+import Weather from "./components/Weather/Weather";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/todolist" element={<ToDoList />} />
         <Route path="/worldclock" element={<WorldClock />} />
+        <Route path="/weather" element={<Weather />} />
       </Routes>
       <Footer />
     </Router>
