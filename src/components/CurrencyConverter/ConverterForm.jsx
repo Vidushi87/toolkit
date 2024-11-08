@@ -1,18 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CurrencyConverter.module.css";
 import CurrencySelect from "./CurrencySelect";
 
 const ConverterForm = () => {
   const [fromCurrency, setFromCurrency] = useState("USD");
   const [toCurrency, setToCurrency] = useState("INR");
+  const [amount, setAmount] = useState(100);
+  const [result, setResult] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => getExchangeRate, []);
 
   const handleSwapCurrencies = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
   };
 
+  const getExchangeRate = async () => {
+    const API_KEY = import.meta.env.VITE_API_KEY;
+    const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency}/${toCurrency}`;
+
+    setIsLoading(true);
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw Error("Something Went Wrong!");
+      }
+      const data = await response.json();
+      const rate = (data.conversion_rate * amount).toFixed(3);
+      setResult(`${amount} ${fromCurrency} = ${rate} ${toCurrency}`);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    getExchangeRate();
+  };
+
   return (
-    <form className={styles.converterForm}>
+    <form className={styles.converterForm} onSubmit={handleFormSubmit}>
       <div className={`input-group ${styles.inputGroup}`}>
         <span className={`input-group-text ${styles.spanElement}`}>
           Enter Amount
@@ -22,6 +52,8 @@ const ConverterForm = () => {
           className={`form-control ${styles.inputAmount}`}
           aria-label="Enter Amount"
           aria-describedby="basic-addon1"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
           required
         />
       </div>
@@ -56,11 +88,13 @@ const ConverterForm = () => {
       </div>
       <button
         type="submit"
-        className={`${styles.submitButton} btn btn-outline-secondary`}
+        className={`${styles.submitButton} ${isLoading ? styles.loading : ""} btn btn-outline-secondary`}
       >
         Get Exchange Rate
       </button>
-      <p className={styles.exchangeRateResult}>1000 USD = 83620.80 INR</p>
+      <p className={styles.exchangeRateResult}>
+        {isLoading ? "Getting Exchange Rate..." : result}
+      </p>
     </form>
   );
 };

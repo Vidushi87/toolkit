@@ -45,6 +45,7 @@ body {
   margin-bottom: 9px;
   width: 100%;
   background-color: rgb(29, 29, 29) !important;
+  color: white;
 }
 
 .spanElement {
@@ -132,6 +133,11 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+.loading {
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .exchangeRateResult {
