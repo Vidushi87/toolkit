@@ -54,6 +54,7 @@ const ConverterForm = () => {
           aria-describedby="basic-addon1"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          onFocus={() => setInputValue("")}
           required
         />
       </div>
