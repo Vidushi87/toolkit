@@ -1,31 +1,170 @@
 body {
-    background-color: #0f0f0f important!;
-    color: #ffffff;
-    background-image: linear-gradient(#161616 1px, transparent 1px),
-      linear-gradient(to right, #161616 1px, #0f0f0f 1px);
-    background-size: 20px 20px;
-  }
-  
-  .BMICalculator {
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    max-width: 600px;
-    width: 100%;
-    overflow: hidden;
-    color: #00ff62;
-  }
+  background-color: #0f0f0f important!;
+  color: #ffffff;
+  background-image: linear-gradient(#161616 1px, transparent 1px),
+    linear-gradient(to right, #161616 1px, #0f0f0f 1px);
+  background-size: 20px 20px;
+}
 
-  .BMICalculator h1 {
-    text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
-  }
-  
-  .container {
-    min-height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: grid;
-    gap: 1rem;
-    flex-grow: 1;
-  }
-  
+.BMICalculator {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  color: #00ff62;
+}
+
+.BMICalculator h1 {
+  text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
+}
+
+.container {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: grid;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.displayWindow {
+  border-top: 2px solid grey;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.displayWindow select {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.5rem;
+  margin: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 5px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  text-align: center;
+}
+
+.displayWindow select {
+  cursor: pointer;
+}
+.inputGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.inputValue {
+  outline: none;
+  min-height: 50px;
+  border-radius: 5px;
+  border-color: rgba(255, 255, 255, 0.18);
+  background-color: rgb(29, 29, 29) !important;
+  color: white;
+  margin: 10px;
+}
+.inputValue,
+input,
+input::placeholder {
+  color: #ffffff !important; /* Ensure text is white */
+  background-color: rgb(
+    29,
+    29,
+    29
+  ) !important; /* Ensure consistent dark background */
+}
+
+/* Additional specific selector to target all inputs within convertUnit */
+input[type="text"],
+input[type="number"] {
+  color: #ffffff !important;
+  background-color: rgb(29, 29, 29) !important;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bmiResult {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 20px 0;
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+}
+
+.submitButton {
+  padding: 0.75rem 1.5rem;
+  margin: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #00ff62;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clearButton {
+  padding: 0.75rem 1.5rem;
+  margin: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bmiRange {
+  background-color: #161616;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-y: auto;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  width: 20%;
+}
+
+.rangeTable {
+  padding: 10px;
+  margin-top: 1 rem;
+}
+
+.rangeHeader {
+  display: flex;
+  justify-content: space-between; /* Distributes space between items */
+  align-items: center; /* Vertically centers items */
+  margin-bottom: 0.5rem; /* Adds some space below the header */
+}
+
+.rangeHeader h2 {
+  margin: 0; /* Removes default margin for h2 */
+}
+
+.bmiTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bmiTable th,
+.bmiTable td {
+  border: 1px solid #757272;
+  padding: 8px;
+  text-align: center;
+}
+
+.bmiTable th {
+  background-color: rgb(29, 29, 29) !important;
+  font-weight: bold;
+  color: #00ff62;
+}

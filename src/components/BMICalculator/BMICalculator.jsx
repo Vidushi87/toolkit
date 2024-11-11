@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./BMICalculator.module.css";
+import BMIRange from "./BMIRange";
+import CalcForm from "./CalcForm";
 
 const BMICalculator = () => {
   return (
@@ -8,7 +10,9 @@ const BMICalculator = () => {
         <center>
           <h1>BMI Calculator</h1>
         </center>
+        <CalcForm />
       </div>
+      <BMIRange />
     </div>
   );
 };

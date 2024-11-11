@@ -43,6 +43,12 @@ const UnitConverterForm = () => {
     setFromUnit(defaultUnits[0] || "");
     setToUnit(defaultUnits[1] || "");
   };
+
+  const clearForm = () => {
+    setInputValue("");
+    setResult("");
+  };
+
   return (
     <div className={styles.convertUnit}>
       <div>
@@ -89,12 +95,22 @@ const UnitConverterForm = () => {
           unitType={unitType}
         />
       </div>
-      <button
-        className={"btn btn-outline-secondary"}
-        onClick={handleConversion}
-      >
-        Convert
-      </button>
+      <div className={styles.buttons}>
+        <button
+          className="btn btn-outline-secondary"
+          onClick={handleConversion}
+        >
+          Convert
+        </button>
+        {result && (
+          <button
+            className={`btn btn-outline-danger ${styles.clearButton}`}
+            onClick={clearForm}
+          >
+            Clear
+          </button>
+        )}
+      </div>
       {result && (
         <p className={styles.conversionResult}>Converted Value: {result}</p>
       )}
