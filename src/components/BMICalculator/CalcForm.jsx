@@ -30,11 +30,11 @@ const CalcForm = () => {
 
       if (calculatedBMI) {
         setBmi(calculatedBMI);
-        if (bmi < 18.5) {
+        if (calculatedBMI < 18.5) {
           setCategory("Underweight");
-        } else if (bmi >= 18.5 && bmi <= 24.9) {
+        } else if (calculatedBMI >= 18.5 && calculatedBMI <= 24.9) {
           setCategory("Normal weight");
-        } else if (bmi >= 25 && bmi <= 29.9) {
+        } else if (calculatedBMI >= 25 && calculatedBMI <= 29.9) {
           setCategory("Overweight");
         } else {
           setCategory("Obese");

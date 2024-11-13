@@ -2,11 +2,11 @@
   margin-left: 3rem;
   font-weight: 500;
   font-size: large;
-  justify-content: space-between; 
+  justify-content: space-between;
+
 }
 
-.nav{
-
+.nav {
   --bs-nav-link-color: white;
 }
 .icon {
