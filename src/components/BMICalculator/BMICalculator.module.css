@@ -13,6 +13,7 @@ body {
   width: 100%;
   overflow: hidden;
   color: #00ff62;
+  padding-top: 10px;
 }
 
 .BMICalculator h1 {

@@ -14,6 +14,7 @@ body {
   overflow: hidden;
   color: #00ff62;
   display: block;
+  padding-top: 10px;
 }
 
 .currencyConverter h1 {

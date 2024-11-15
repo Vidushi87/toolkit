@@ -20,6 +20,7 @@ body {
   width: 100%;
   overflow: hidden;
   color: #00ff62;
+  padding-top: 10px;
 }
 .calculator h1 {
   text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);

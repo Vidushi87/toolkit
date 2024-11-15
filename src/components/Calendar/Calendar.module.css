@@ -1,33 +1,73 @@
-
-
 body {
-    background-color: #0f0f0f important!;
-    color: #ffffff;
-    background-image: linear-gradient(#161616 1px, transparent 1px),
-      linear-gradient(to right, #161616 1px, #0f0f0f 1px);
-    background-size: 20px 20px;
-  }
-  
-  .calendar {
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    max-width: 600px;
-    width: 100%;
-    overflow: hidden;
-    color: #00ff62;
-  }
+  background-color: #0f0f0f important!;
+  color: #ffffff;
+  background-image: linear-gradient(#161616 1px, transparent 1px),
+    linear-gradient(to right, #161616 1px, #0f0f0f 1px);
+  background-size: 20px 20px;
+}
 
-  .calendar h1 {
-    text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
-  }
-  
-  .container {
-    min-height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: grid;
-    gap: 1rem;
-    flex-grow: 1;
-  }
-  
+.calendar {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  color: #00ff62;
+  padding-top: 10px;
+}
+
+.calendar h1 {
+  text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
+}
+
+.container {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: grid;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.calendarNav {
+  background-color: rgb(29, 29, 29) !important;
+}
+
+.division {
+  height: 20px;
+}
+
+.dateRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+
+.navRow:hover {
+  background-color: #6c757d;
+  color: white;
+  cursor: pointer;
+}
+
+.date:hover {
+  background-color: #6c757d;
+  color: white;
+  cursor: pointer;
+}
+
+/* .selectedDate {
+  background-color: #00ff62;
+  color: #6c757d;
+} */
+
+.selectedDate {
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+}
+
+.todayDate {
+  background-color: lightblue;
+  color: black;
+  font-weight: bold;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Calendar.module.css";
+import CalenderDashboard from "./CalendarDashboard";
 
 const Calendar = () => {
   return (
@@ -8,6 +9,7 @@ const Calendar = () => {
         <center>
           <h1>Calendar</h1>
         </center>
+        <CalenderDashboard />
       </div>
     </div>
   );
