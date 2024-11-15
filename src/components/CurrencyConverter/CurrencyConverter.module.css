@@ -51,7 +51,7 @@ body {
 
 .spanElement {
   background-color: rgb(29, 29, 29) !important;
-  color: rgba(255, 255, 255, 0.5);
+  color: #b1a8a8 !important;
   border-color: rgba(255, 255, 255, 0.18) !important;
   font-size: 1.1rem;
 }
@@ -68,7 +68,11 @@ body {
 .converterForm input,
 .converterForm input::placeholder {
   color: #ffffff !important; /* Ensure text is white */
-  background-color: rgb(29, 29, 29) !important; /* Ensure consistent dark background */
+  background-color: rgb(
+    29,
+    29,
+    29
+  ) !important; /* Ensure consistent dark background */
   border: 1px solid rgba(255, 255, 255, 0.18); /* Adjust border for visibility */
 }
 

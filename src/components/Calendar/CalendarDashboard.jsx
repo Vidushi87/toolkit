@@ -9,7 +9,6 @@ import {
   sub,
 } from "date-fns";
 import CalendarNav from "./CalendarNav";
-import CalendarDates from "./CalendarDates";
 
 const daysofWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 

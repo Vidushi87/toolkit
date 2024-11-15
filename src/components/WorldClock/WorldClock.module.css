@@ -1,34 +1,97 @@
+/* WorldClockApp.module.css */
 
+/* Clock container styles */
+.clockCard {
+  border-radius: 50%; /* Make the clock circular */
+  background-color: rgb(29, 29, 29);
+  border: 2px solid #00ff62;
+  color: #b1a8a8;
+  width: 150px; /* Fixed width for each clock */
+  height: 150px; /* Fixed height to ensure circular shape */
+  display: flex;
+  flex-direction: column; /* Stack the city name and time vertically */
+  justify-content: center;
+  align-items: center; /* Center the content inside the circle */
+  margin: 5px; /* Reduced margin between clocks */
+  text-align: center; /* Center the text inside the clock */
+}
 
+.clockTitle {
+  font-size: 1.5rem; /* Set fixed font size */
+  font-weight: bold;
+  margin: 0; /* Remove margin */
+}
+
+.clockHeader {
+  font-size: 1rem; /* Smaller font size for city name */
+  margin-bottom: 5px; /* Space between the city and time */
+}
+
+.cardBody {
+  font-size: 1.2rem; /* Font size for time */
+}
+
+/* Parent container with CSS Grid */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Adjust columns based on available space */
+  gap: 10px; /* Reduced gap between clocks */
+  justify-items: center; /* Center clocks inside each grid cell */
+  padding: 20px;
+  margin-top: 20px;
+  max-width: 100%; /* Ensure it stays responsive */
+  width: 100%; /* Ensure the grid doesn't exceed container width */
+  justify-content: center; /* Center content horizontally */
+}
+
+/* WorldClock container styles */
+.worldClock {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  width: 100%; /* Keep it responsive */
+  max-width: 700px; /* Reduced max-width to make the container smaller */
+  overflow: hidden;
+  color: #00ff62;
+  padding-top: 10px;
+  margin: 0 auto; /* Center the worldClock container */
+}
+
+/* Header Styles */
+.worldClock h1 {
+  text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
+}
+
+/* Main container styles */
+.container {
+  min-height: 100vh; /* Ensure full height for the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Stack vertically */
+  gap: 1rem;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 800px; /* Reduced maximum width of the container */
+  margin: 0 auto; /* Center the entire container */
+  padding: 20px; /* Add padding to avoid touching edges */
+}
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+/* Body styling */
 body {
-    background-color: #0f0f0f important!;
-    color: #ffffff;
-    background-image: linear-gradient(#161616 1px, transparent 1px),
-      linear-gradient(to right, #161616 1px, #0f0f0f 1px);
-    background-size: 20px 20px;
-  }
-  
-  .worldClock {
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    max-width: 600px;
-    width: 100%;
-    overflow: hidden;
-    color: #00ff62;
-    padding-top: 10px;
-  }
-
-  .worldClock h1 {
-    text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
-  }
-  
-  .container {
-    min-height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: grid;
-    gap: 1rem;
-    flex-grow: 1;
-  }
-  
+  background-color: #0f0f0f !important;
+  color: #ffffff;
+  background-image: linear-gradient(#161616 1px, transparent 1px),
+    linear-gradient(to right, #161616 1px, #0f0f0f 1px);
+  background-size: 20px 20px;
+  margin: 0; /* Remove default margin to prevent stretching */
+  padding: 0; /* Remove default padding */
+}

@@ -39,7 +39,7 @@ body {
 }
 
 .dateRow {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(7, 1fr) !important;
 }
 
@@ -54,11 +54,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
-/* .selectedDate {
-  background-color: #00ff62;
-  color: #6c757d;
-} */
 
 .selectedDate {
   background-color: gray;
