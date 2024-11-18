@@ -1,8 +1,8 @@
 //const API_KEY = "J1XYU22DA79P";
 
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./WorldClock.module.css";
+import Clocks from "./Clocks";
 
 const WorldClockApp = () => {
   const [timeZones, setTimeZones] = useState([]); // To store the list of city/region timezones
@@ -135,23 +135,7 @@ const WorldClockApp = () => {
       </div>
 
       {/* Clocks */}
-      <div className="row">
-        {selectedCities.map(({ city, timezone }) => (
-          <div
-            className={`col-md-3 mb-4`}
-            key={timezone}
-          >
-            <div className={`${styles.clockCard} text-center`}>
-              <div className={styles.clockHeader}>{city}</div>
-              <div className={styles.cardBody}>
-                <h5 className={styles.clockTitle}>
-                  {localTimes[timezone] || "Loading..."}
-                </h5>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Clocks selectedCities={selectedCities} localTimes={localTimes} />
     </div>
   );
 };
