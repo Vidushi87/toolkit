@@ -1,76 +1,44 @@
-.container {
-  margin-left: 3rem;
-  font-weight: 500;
-  font-size: large;
-  justify-content: space-between;
-
+.navbar {
+  font-size: 1rem;
 }
 
-.nav {
-  --bs-nav-link-color: white;
+.navbar .nav-link {
+  color: white;
 }
-.icon {
-  font-size: large;
+
+.navbar .nav-link:hover {
+  color: lightgray;
+}
+
+.navIcon {
+  font-size: 1.25rem;
 }
 
 .active {
-  color: white; /* Change to your desired active text color */
+  font-weight: bold;
+  color: white !important;
 }
 
 .activeIcon {
-  color: white; /* Change to your desired active icon color */
+  color: white !important;
 }
 
-.menu {
-  display: none;
-  position: absolute;
-  top: 0.75rem;
-  right: 0.5rem;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 3rem;
-  height: 3rem;
-  cursor: pointer;
+/* Hamburger Icon Right Aligned */
+.hamburger {
+  margin-left: auto;
 }
 
-.menu span {
-  height: 0.4rem;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 0.2rem;
-  right: 1rem;
-}
-
-@media (max-width: 1080px) {
-  .menu {
-    display: flex;
-  }
-  .menuIcon {
-    display: flex;
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav .nav-item {
+    flex-direction: row;
+    justify-content: start;
+    padding: 0.5rem 1rem;
   }
 
-  nav {
-    flex-direction: column !important;
-    justify-content: flex-end;
-  }
-  nav ul {
-    display: none;
-    flex-direction: column !important;
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  nav ul li {
-    margin: 0.2rem 0.5rem;
-  }
-
-  /* Show the menu when the state is toggled */
-  .showMenu {
-    display: flex !important;
-  }
-
-  .hideMenu {
-    display: none;
+  .nav-link {
+    justify-content: start;
+    text-align: left;
+    font-size: 1.1rem;
   }
 }
-

@@ -31,16 +31,19 @@ body {
 }
 
 .notesList {
-  width: auto;
   display: grid;
-  margin-top: 20px;
-  border-top: 2px solid #808080db;
-  padding: 40px;
   grid-gap: 1rem;
   grid-template-columns: repeat(2, 300px);
   align-items: center;
   justify-content: center;
   color: #d2d3d2;
+}
+
+.notesContainer {
+  width: auto;
+  margin-top: 20px;
+  border-top: 2px solid #808080db;
+  padding: 40px;
 }
 
 .note {
@@ -50,6 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: pre-wrap;
 }
 
 .noteFooter {
@@ -68,20 +72,43 @@ body {
   background-color: #323432;
 }
 
-.addNote textarea{
+.addNote textarea {
   outline: none;
 }
 
-.addNote button{
+.addNote button {
   font-size: 1rem;
   border: 2px solid #00ff62;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  color:#a7a7a7;
+  color: #a7a7a7;
   background-color: #16161669;
 }
 
-.addNote button:hover{
+.addNote button:hover {
   border-color: #a7a7a7;
+}
+
+.deleteIcon {
+  cursor: pointer;
+}
+
+.deleteIcon:hover {
+  color: #00ff62 !important;
+}
+
+.search {
+  border-radius: 10px;
+  background-color: rgb(29, 29, 29) !important;
+}
+
+.search input {
+  border: none;
+  background-color: rgb(29, 29, 29) !important;
+  padding: 0.5rem;
+}
+
+.search input:focus {
+  outline: none;
 }
