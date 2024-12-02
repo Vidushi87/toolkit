@@ -44,7 +44,7 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
-            to="/todolist"
+            to="/notes"
             className={({ isActive }) =>
               `nav-link text-center ${
                 isActive ? styles.active : "text-secondary"
@@ -58,7 +58,7 @@ const NavBar = () => {
                     isActive ? styles.activeIcon : ""
                   }`}
                 ></i>
-                To Do List
+                Notes
               </>
             )}
           </NavLink>

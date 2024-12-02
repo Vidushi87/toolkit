@@ -1,0 +1,82 @@
+body {
+  background-color: #0f0f0f important!;
+  color: #ffffff;
+  background-image: linear-gradient(#161616 1px, transparent 1px),
+    linear-gradient(to right, #161616 1px, #0f0f0f 1px);
+  background-size: 20px 20px;
+}
+
+.notes {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  max-width: 680px;
+  width: 100%;
+  overflow: hidden;
+  color: #00ff62;
+  padding-top: 10px;
+}
+
+.notes h1 {
+  text-shadow: 2px 2px 5px rgba(79, 79, 65, 0.6);
+}
+
+.container {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: grid;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.notesList {
+  width: auto;
+  display: grid;
+  margin-top: 20px;
+  border-top: 2px solid #808080db;
+  padding: 40px;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 300px);
+  align-items: center;
+  justify-content: center;
+  color: #d2d3d2;
+}
+
+.note {
+  background-color: #5c5757;
+  border-radius: 10px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.noteFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addNote {
+  background-color: #323432;
+}
+.addNote textarea {
+  border: none;
+  resize: none;
+  background-color: #323432;
+}
+
+.addNote textarea{
+  outline: none;
+}
+
+.addNote button{
+  font-size: 1rem;
+  border: 2px solid #00ff62;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color:#a7a7a7;
+  background-color: #16161669;
+}
