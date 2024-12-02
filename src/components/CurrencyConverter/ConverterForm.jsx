@@ -89,7 +89,9 @@ const ConverterForm = () => {
       </div>
       <button
         type="submit"
-        className={`${styles.submitButton} ${isLoading ? styles.loading : ""} btn btn-outline-secondary`}
+        className={`${
+          isLoading ? styles.loading : ""
+        } btn btn-outline-secondary`}
       >
         Get Exchange Rate
       </button>

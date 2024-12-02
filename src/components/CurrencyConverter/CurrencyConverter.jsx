@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./CurrencyConverter.module.css";
-import ConverterForm from "./converterForm";
+import ConverterForm from "./ConverterForm";
 
 const CurrencyConverter = () => {
   return (

@@ -61,6 +61,7 @@ body {
 .addNote {
   background-color: #323432;
 }
+
 .addNote textarea {
   border: none;
   resize: none;
@@ -79,4 +80,8 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   color:#a7a7a7;
   background-color: #16161669;
+}
+
+.addNote button:hover{
+  border-color: #a7a7a7;
 }

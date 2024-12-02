@@ -63,11 +63,12 @@ body {
   outline: none;
   min-height: 50px;
   border-radius: 5px;
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(125, 122, 122, 0.647) !important;
   background-color: rgb(29, 29, 29) !important;
   color: white;
   margin: 10px;
 }
+
 .inputValue,
 input,
 input::placeholder {
@@ -105,15 +106,19 @@ input[type="number"] {
   letter-spacing: 0.5px;
 }
 
-.submitButton {
+.displayWindow button {
   padding: 0.75rem 1.5rem;
   margin: 1rem;
   font-size: 1rem;
   font-weight: bold;
-  border: 2px solid #00ff62;
+  border: 2px solid #00ff62 !important;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.displayWindow button:hover {
+  border-color: grey !important;
 }
 
 .clearButton {

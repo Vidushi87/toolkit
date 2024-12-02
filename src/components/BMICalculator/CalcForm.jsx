@@ -9,6 +9,7 @@ const CalcForm = () => {
   const [unitType, setUnitType] = useState("metricSystem");
   const [feet, setFeet] = useState("");
   const [inches, setInches] = useState("");
+  const [idealWeightRange, setIdealWeightRange] = useState("");
 
   const calculateBMI = () => {
     let calculatedBMI;
@@ -17,6 +18,7 @@ const CalcForm = () => {
       if (unitType === "metricSystem") {
         const heightInMeters = height / 100;
         calculatedBMI = (weight / (heightInMeters * heightInMeters)).toFixed(2);
+        calculateIdealWeightRange(heightInMeters, "metricSystem");
       } else if (unitType === "imperialSystem") {
         console.log("reached here");
         heightInInches = parseInt(feet || 0) * 12 + parseInt(inches || 0);
@@ -25,6 +27,7 @@ const CalcForm = () => {
             (weight / (heightInInches * heightInInches)) *
             703
           ).toFixed(2);
+          calculateIdealWeightRange(heightInMeters, "imperialSystem");
         }
       }
 
@@ -43,11 +46,26 @@ const CalcForm = () => {
     }
   };
 
+  const calculateIdealWeightRange = (height, system) => {
+    let minWeight, maxWeight;
+    if (system === "metricSystem") {
+      minWeight = (18.5 * height * height).toFixed(1);
+      maxWeight = (24.9 * height * height).toFixed(1);
+    } else if (system === "imperialSystem") {
+      minWeight = ((18.5 * height * height) / 703).toFixed(1);
+      maxWeight = ((24.9 * height * height) / 703).toFixed(1);
+    }
+    setIdealWeightRange(
+      `${minWeight} - ${maxWeight} ${system === "metricSystem" ? "kg" : "lbs"}`
+    );
+  };
+
   const clearForm = () => {
     setHeight("");
     setWeight("");
     setBmi("");
     setCategory("");
+    setIdealWeightRange("");
     setFeet("");
     setInches("");
   };
@@ -105,7 +123,7 @@ const CalcForm = () => {
       </div>
       <div className={styles.buttons}>
         <button
-          className={`btn btn-outline-secondary ${styles.submitButton}`}
+          className={`btn btn-outline-secondary`}
           onClick={calculateBMI}
         >
           Calculate BMI
@@ -124,6 +142,8 @@ const CalcForm = () => {
           Your BMI : {bmi}
           <br />
           Your Category: {category}
+          <br />
+          Ideal Weight Range: {idealWeightRange}
         </p>
       )}
     </div>
