@@ -6,7 +6,7 @@ const Weather = () => {
     <div className={styles.container}>
       <div className={styles.weather}>
         <center>
-          <h1>Weather</h1>
+          <h1>Weather Forecast</h1>
         </center>
       </div>
     </div>

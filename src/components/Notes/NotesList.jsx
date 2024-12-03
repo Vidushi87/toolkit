@@ -10,6 +10,7 @@ const NotesList = ({
   handleDeleteNote,
   handleSearchNote,
 }) => {
+  console.log(notes)
   return (
     <div className={`${styles.notesContainer}`}>
       <Search handleSearchNote={handleSearchNote} />
@@ -21,6 +22,7 @@ const NotesList = ({
             id={note.id}
             text={note.text}
             date={note.date}
+            heading={note.heading}
             handleDeleteNote={handleDeleteNote}
           />
         ))}

@@ -65,26 +65,12 @@ body {
   border-radius: 5px;
   border-color: rgba(125, 122, 122, 0.647) !important;
   background-color: rgb(29, 29, 29) !important;
-  color: white;
+  color: #ffffff;
   margin: 10px;
 }
 
-.inputValue,
-input,
 input::placeholder {
   color: #ffffff !important; /* Ensure text is white */
-  background-color: rgb(
-    29,
-    29,
-    29
-  ) !important; /* Ensure consistent dark background */
-}
-
-/* Additional specific selector to target all inputs within convertUnit */
-input[type="text"],
-input[type="number"] {
-  color: #ffffff !important;
-  background-color: rgb(29, 29, 29) !important;
 }
 
 .buttons {

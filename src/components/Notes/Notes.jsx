@@ -15,10 +15,11 @@ const Notes = () => {
     localStorage.setItem("toolkit-notes", JSON.stringify(notes));
   }, [notes]);
 
-  const addNote = (text) => {
+  const addNote = (text, heading) => {
     const date = new Date().toLocaleDateString();
     const newNote = {
       id: nanoid(),
+      heading,
       text,
       date,
     };

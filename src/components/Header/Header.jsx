@@ -33,7 +33,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-dark">
+    <header className="bg-dark sticky-top">
       <nav
         className={`navbar navbar-expand-lg navbar-dark bg-dark py-3 ${styles.navbar}`}
       >
