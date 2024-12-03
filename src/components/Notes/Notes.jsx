@@ -1,31 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import styles from "./Notes.module.css";
 import NotesList from "./NotesList";
 
 const Notes = () => {
-  const [notes, setNotes] = useState([
-    { id: nanoid(), text: "this is my first note", date: "01/12/2024" },
-    { id: nanoid(), text: "this is my old note", date: "01/11/2024" },
-    { id: nanoid(), text: "this is my note", date: "28/11/2024" },
-    { id: nanoid(), text: "this is note", date: "30/11/2024" },
-  ]);
+  const [notes, setNotes] = useState(() => {
+    const savedNotes = localStorage.getItem("toolkit-notes");
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  });
+
+  const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("toolkit-notes", JSON.stringify(notes));
+  }, [notes]);
 
   const addNote = (text) => {
-    const date = new Date().toLocaleDateString;
+    const date = new Date().toLocaleDateString();
     const newNote = {
       id: nanoid(),
-      text: text,
-      date: date,
+      text,
+      date,
     };
 
-    const newNotes = [newNote, ...notes];
-    setNotes(newNotes);
+    setNotes((prevNotes) => [newNote, ...prevNotes]);
   };
 
   const deleteNote = (id) => {
-    const newNotes = notes.filter((note) => note.id !== id);
-    setNotes(newNotes);
+    setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
   };
 
   return (
@@ -35,9 +37,12 @@ const Notes = () => {
           <h1>Notes</h1>
         </center>
         <NotesList
-          notes={notes}
+          notes={notes.filter((note) =>
+            note.text.toLowerCase().includes(searchText.toLowerCase())
+          )}
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
+          handleSearchNote={setSearchText}
         />
       </div>
     </div>

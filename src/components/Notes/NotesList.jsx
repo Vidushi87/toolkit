@@ -4,10 +4,15 @@ import Note from "./Note";
 import AddNote from "./AddNote";
 import Search from "./Search";
 
-const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
+const NotesList = ({
+  notes,
+  handleAddNote,
+  handleDeleteNote,
+  handleSearchNote,
+}) => {
   return (
     <div className={`${styles.notesContainer}`}>
-      <Search />
+      <Search handleSearchNote={handleSearchNote} />
       <div className={`${styles.notesList}`}>
         <AddNote handleAddNote={handleAddNote} />
         {notes.map((note) => (

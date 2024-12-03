@@ -37,13 +37,29 @@ body {
   align-items: center;
   justify-content: center;
   color: #d2d3d2;
+  overflow-y: auto;
+  max-height: 550px;
+}
+.notesList::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.notesList::-webkit-scrollbar-thumb {
+  background-color: #00ff62; /* Color of the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid #161616; /* Border around the thumb */
+}
+
+.notesList::-webkit-scrollbar-track {
+  background-color: #333333; /* Background of the scrollbar track */
+  border-radius: 10px;
 }
 
 .notesContainer {
   width: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   border-top: 2px solid #808080db;
-  padding: 40px;
+  padding: 20px;
 }
 
 .note {
@@ -99,6 +115,9 @@ body {
 }
 
 .search {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   border-radius: 10px;
   background-color: rgb(29, 29, 29) !important;
 }
