@@ -1,11 +1,9 @@
-//const API_KEY = "J1XYU22DA79P";
-
 import React, { useState, useEffect } from "react";
 import styles from "./WorldClock.module.css";
 import Clocks from "./Clocks";
 
-const WorldClockApp = () => {
-  const [timeZones, setTimeZones] = useState([]); // To store the list of city/region timezones
+const ClockDashboard = () => {
+  const [timeZones, setTimeZones] = useState([]);
   const [selectedCities, setSelectedCities] = useState([
     { city: "India", timezone: "Asia/Kolkata" },
     { city: "UK", timezone: "Europe/London" },
@@ -13,19 +11,18 @@ const WorldClockApp = () => {
     { city: "US", timezone: "America/New_York" },
   ]);
   const [localTimes, setLocalTimes] = useState({});
+  const [searchTerm, setSearchTerm] = useState(""); // For search filter
 
-  const API_KEY = "YOUR_TIMEZONEDB_API_KEY"; // Replace with your API key
+  const API_KEY = "J1XYU22DA79P"; // Replace with your API key
 
-  // Fetch the list of time zones from TimeZoneDB
   const fetchTimeZones = async () => {
     try {
-      // Use the correct endpoint for retrieving all time zones
       const response = await fetch(
         `https://api.timezonedb.com/v2.1/list-time-zone?key=${API_KEY}&format=json`
       );
       const data = await response.json();
       if (data.status === "OK") {
-        setTimeZones(data.zones); // Assuming the API returns a `zones` array with time zones
+        setTimeZones(data.zones);
       } else {
         console.error("Failed to fetch time zones:", data.message);
       }
@@ -38,7 +35,6 @@ const WorldClockApp = () => {
     fetchTimeZones(); // Fetch time zones on component mount
   }, []);
 
-  // Function to get the current time for a given timezone
   const getTimeForCity = (timezone) => {
     const options = {
       timeZone: timezone,
@@ -48,7 +44,7 @@ const WorldClockApp = () => {
       hour12: true,
     };
     const timeFormatter = new Intl.DateTimeFormat("en-US", options);
-    return timeFormatter.format(new Date()); // Format time in specified timezone
+    return timeFormatter.format(new Date());
   };
 
   useEffect(() => {
@@ -56,19 +52,18 @@ const WorldClockApp = () => {
       const updatedTimes = {};
 
       for (let { city, timezone } of selectedCities) {
-        const time = getTimeForCity(timezone); // Use the Intl.DateTimeFormat
+        const time = getTimeForCity(timezone);
         updatedTimes[timezone] = time;
       }
 
       setLocalTimes(updatedTimes);
     };
 
-    updateTimes(); // Initial fetch
+    updateTimes();
     const interval = setInterval(updateTimes, 10000); // Update every 10 seconds
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [selectedCities]);
 
-  // Handle city selection from dropdown
   const handleCitySelection = (city, timezone) => {
     const alreadySelected = selectedCities.find(
       (item) => item.timezone === timezone
@@ -84,6 +79,10 @@ const WorldClockApp = () => {
       alert("You can only select up to 4 cities at a time.");
     }
   };
+
+  const filteredTimeZones = timeZones.filter((timezone) =>
+    timezone.zoneName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div
@@ -102,11 +101,43 @@ const WorldClockApp = () => {
             </button>
             <ul
               className={`dropdown-menu ${styles.dropdownMenu}`}
-              style={{ maxHeight: "200px", overflowY: "scroll" }}
+              style={{ maxHeight: "300px", overflowY: "auto" }}
             >
-              {timeZones && timeZones.length > 0 ? (
-                timeZones.map((timezone) => {
-                  const city = timezone.zoneName.split("/")[1]; // Extract city from timezone
+              {/* Display selected cities only if there are any */}
+              {selectedCities.length > 0 && (
+                <>
+                  <div className="dropdown-header">
+                    <strong>Selected Cities</strong>
+                  </div>
+                  {selectedCities.map(({ city, timezone }) => (
+                    <li key={timezone}>
+                      <button
+                        className="dropdown-item active"
+                        onClick={() => handleCitySelection(city, timezone)}
+                      >
+                        {city} ({timezone})
+                      </button>
+                    </li>
+                  ))}
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                </>
+              )}
+
+              {/* Search input */}
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search for a city..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+
+              {/* Display filtered time zones */}
+              {filteredTimeZones.length > 0 ? (
+                filteredTimeZones.map((timezone) => {
+                  const city = timezone.zoneName.split("/")[1];
                   return (
                     <li key={timezone.zoneName}>
                       <button
@@ -127,7 +158,7 @@ const WorldClockApp = () => {
                   );
                 })
               ) : (
-                <li className="dropdown-item">Loading...</li>
+                <li className="dropdown-item">No results found</li>
               )}
             </ul>
           </div>
@@ -140,4 +171,4 @@ const WorldClockApp = () => {
   );
 };
 
-export default WorldClockApp;
+export default ClockDashboard;

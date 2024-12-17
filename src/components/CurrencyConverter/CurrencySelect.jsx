@@ -169,7 +169,7 @@ const CurrencySelect = ({ selectedCurrency, handleCurrency }) => {
 
   return (
     <div className={styles.currencySelect}>
-      <img src={`https://flagsapi.com/${countryCode}/flat/64.png`} alt="Flag" />
+      <img src={`https://flagsapi.com/${countryCode}/flat/64.png`} alt="Flag" className="m-2"/>
       <select
         className={`form-select ${styles.currencyDropdown}`}
         value={selectedCurrency}

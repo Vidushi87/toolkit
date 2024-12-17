@@ -34,14 +34,13 @@
 /* Parent container with CSS Grid */
 .row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Adjust columns based on available space */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(120px, 1fr)
+  ); /* Adjust columns based on available space */
   gap: 10px; /* Reduced gap between clocks */
-  justify-items: center; /* Center clocks inside each grid cell */
   padding: 20px;
   margin-top: 20px;
-  max-width: 100%; /* Ensure it stays responsive */
-  width: 100%; /* Ensure the grid doesn't exceed container width */
-  justify-content: center; /* Center content horizontally */
 }
 
 /* WorldClock container styles */
@@ -77,8 +76,8 @@
 }
 
 .dropdown-menu {
-  max-height: 200px;
-  overflow-y: scroll;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .textCenter {
@@ -87,11 +86,25 @@
 
 /* Body styling */
 body {
-  background-color: #0f0f0f !important;
-  color: #ffffff;
-  background-image: linear-gradient(#161616 1px, transparent 1px),
-    linear-gradient(to right, #161616 1px, #0f0f0f 1px);
-  background-size: 20px 20px;
-  margin: 0; /* Remove default margin to prevent stretching */
-  padding: 0; /* Remove default padding */
+  background-color: #0f0f0f; /* Set background color */
+  color: white;
+}
+
+@media (max-width: 768px) {
+  /* For screens smaller than 768px (Tablets) */
+  .row {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Even smaller columns */
+    gap: 20px;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  /* For screens smaller than 480px (Mobile devices) */
+  .row {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller columns for mobile */
+    gap:20px;
+  }
+
 }
