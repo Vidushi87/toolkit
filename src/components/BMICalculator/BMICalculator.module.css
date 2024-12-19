@@ -25,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: grid;
+  flex-direction: row;
   gap: 1rem;
   flex-grow: 1;
 }
@@ -124,7 +124,7 @@ input::placeholder {
   border-radius: 5px;
   overflow-y: auto;
   border: 3px solid rgba(255, 255, 255, 0.3);
-  width: 20%;
+  width: 25%;
 }
 
 .rangeTable {
@@ -159,4 +159,14 @@ input::placeholder {
   background-color: rgb(29, 29, 29) !important;
   font-weight: bold;
   color: #00ff62;
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .bmiRange{
+    width: 90%;
+  }
 }

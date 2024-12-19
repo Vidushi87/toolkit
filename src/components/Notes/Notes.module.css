@@ -33,12 +33,19 @@ body {
 .notesList {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(2, 300px);
+  grid-template-columns: repeat(2, 300px); /* Default: 2 columns */
   align-items: center;
   justify-content: center;
   color: #d2d3d2;
   overflow-y: auto;
   max-height: 475px;
+}
+
+@media (max-width: 768px) {
+  .notesList {
+    grid-template-columns: 1fr; /* Switch to 1 column */
+    justify-content: stretch; /* Ensure proper alignment */
+  }
 }
 
 .notesList::-webkit-scrollbar {
@@ -100,14 +107,14 @@ body {
   outline: none;
 }
 
-.addNote input{
+.addNote input {
   border: none;
   resize: none;
   background-color: #323432 !important;
-  color:#8f9b93
+  color: #8f9b93;
 }
 
-.addNote input:focus{
+.addNote input:focus {
   outline: none;
 }
 .addNote button {

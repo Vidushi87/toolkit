@@ -59,7 +59,7 @@ const ConverterForm = () => {
         />
       </div>
       <div className={styles.formGroup}>
-        <div className="form-section">
+        <div className="form-section m-2">
           <label className="form-label">From</label>
           <CurrencySelect
             selectedCurrency={fromCurrency}
@@ -79,7 +79,7 @@ const ConverterForm = () => {
             />
           </svg>
         </div>
-        <div className="form-section">
+        <div className="form-section m-2">
           <label className="form-label">To</label>
           <CurrencySelect
             selectedCurrency={toCurrency}
