@@ -48,7 +48,7 @@ const Header = () => {
             className="navbar-brand d-flex flex-column justify-content-center align-items-center"
           >
             <i className="bi bi-tools h1 me-2"></i>
-            <span>Tool Box</span>
+            <span>Tool-Kit</span>
           </Link>
 
           {/* Toggle Button for Mobile */}
