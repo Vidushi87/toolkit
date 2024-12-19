@@ -9,6 +9,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const menuItems = [
     { to: "/calculator", label: "Calculator", icon: "bi-calculator" },
     { to: "/notes", label: "Notes", icon: "bi-check2-square" },
@@ -39,7 +43,10 @@ const Header = () => {
       >
         <div className="container">
           {/* Brand Logo */}
-          <Link to="/" className="navbar-brand">
+          <Link
+            to="/"
+            className="navbar-brand d-flex flex-column justify-content-center align-items-center"
+          >
             <i className="bi bi-tools h1 me-2"></i>
             <span>Tool Box</span>
           </Link>
@@ -64,10 +71,11 @@ const Header = () => {
                   <NavLink
                     to={item.to}
                     className={({ isActive }) =>
-                      `nav-link d-flex align-items-center ${
-                        isActive ? styles.active : ""
-                      }`
+                      `nav-link d-flex align-items-center flex-column ${
+                        styles.navLink
+                      } ${isActive ? styles.active : ""}`
                     }
+                    onClick={closeMenu}
                   >
                     {({ isActive }) => (
                       <>

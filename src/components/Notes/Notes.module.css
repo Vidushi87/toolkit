@@ -80,6 +80,11 @@ body {
   white-space: pre-wrap;
 }
 
+.editNote {
+  display: flex;
+  flex-direction: column;
+}
+
 .noteFooter {
   display: flex;
   align-items: center;
@@ -131,11 +136,11 @@ body {
   border-color: #a7a7a7;
 }
 
-.deleteIcon {
+.icon {
   cursor: pointer;
 }
 
-.deleteIcon:hover {
+.icon:hover {
   color: #00ff62 !important;
 }
 
@@ -153,5 +158,27 @@ body {
 }
 
 .search input:focus {
+  outline: none;
+}
+
+.note textarea {
+  border: none;
+  resize: none;
+  background-color: #5c5757;
+  color: #ffffff;
+}
+
+.note textarea:focus {
+  outline: none;
+}
+
+.note input {
+  border: none;
+  resize: none;
+  background-color: #5c5757 !important;
+  color: #c6c6c6;
+}
+
+.note input:focus {
   outline: none;
 }

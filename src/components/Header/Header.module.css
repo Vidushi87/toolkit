@@ -2,16 +2,16 @@
   font-size: 1rem;
 }
 
-.navbar .nav-link {
-  color: white;
+.navbar .navLink {
+  color: rgb(173, 173, 173);
 }
 
-.navbar .nav-link:hover {
-  color: lightgray;
+.navbar .navLink:hover {
+  color: rgb(237, 236, 236);
 }
 
 .navIcon {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 
 .active {
@@ -26,19 +26,4 @@
 /* Hamburger Icon Right Aligned */
 .hamburger {
   margin-left: auto;
-}
-
-/* Mobile View Adjustments */
-@media (max-width: 768px) {
-  .navbar-nav .nav-item {
-    flex-direction: row;
-    justify-content: start;
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-link {
-    justify-content: start;
-    text-align: left;
-    font-size: 1.1rem;
-  }
 }

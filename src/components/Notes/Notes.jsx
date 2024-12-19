@@ -31,6 +31,16 @@ const Notes = () => {
     setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
   };
 
+  const handleEditNote = (id, newText, newHeading) => {
+    setNotes((prevNotes) =>
+      prevNotes.map((note) =>
+        note.id === id
+          ? { ...note, text: newText, heading: newHeading }
+          : note
+      )
+    );
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.notes}>
@@ -44,6 +54,7 @@ const Notes = () => {
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
           handleSearchNote={setSearchText}
+          handleEditNote={handleEditNote}  // Pass handleEditNote function
         />
       </div>
     </div>

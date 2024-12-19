@@ -9,8 +9,8 @@ const NotesList = ({
   handleAddNote,
   handleDeleteNote,
   handleSearchNote,
+  handleEditNote, // Receive handleEditNote
 }) => {
-  console.log(notes)
   return (
     <div className={`${styles.notesContainer}`}>
       <Search handleSearchNote={handleSearchNote} />
@@ -24,6 +24,7 @@ const NotesList = ({
             date={note.date}
             heading={note.heading}
             handleDeleteNote={handleDeleteNote}
+            handleEditNote={handleEditNote} // Pass handleEditNote to each Note
           />
         ))}
       </div>
