@@ -17,19 +17,19 @@ const Dashboard = () => {
       description: "Quickly jot down your thoughts and ideas",
     },
     {
-      name: "Currency Converter",
+      name: "CurrencyConverter",
       image: "/CurrencyConverter.png",
       description:
         "Quickly and accurately convert your favorite currencies anytime, anywhere.",
     },
     {
-      name: "Unit Converter",
+      name: "UnitConverter",
       image: "/UnitConverter.png",
       description:
         "Need a conversion? Get accurate results for any unit type at the speed of light.",
     },
     {
-      name: "BMI Calculator",
+      name: "BMICalculator",
       image: "/BMICalculator.png",
       description: "Calculate your BMI and stay on top of your health goals.",
     },
@@ -40,7 +40,7 @@ const Dashboard = () => {
         "From birthdays to meetings—never miss an important date again.",
     },
     {
-      name: "World Clock",
+      name: "WorldClock",
       image: "/WorldClock.png",
       description:
         "Know the time in any city with just a glance, no matter where you are.",
