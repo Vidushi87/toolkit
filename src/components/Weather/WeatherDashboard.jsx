@@ -22,7 +22,7 @@ const WeatherDashboard = ({ apiKey }) => {
 
   const setCityWeather = (city) => {
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`
     )
       .then((response) => {
         if (!response.ok) {
